@@ -9,18 +9,9 @@ let painted = [];
 let palette = [];
 let selectedColor = 1;
 
-// Carrega progresso salvo
-function loadProgress() {
-  const saved = localStorage.getItem("painted");
-  if (saved) {
-    painted = JSON.parse(saved);
-  }
-}
+const STORAGE_KEY = "paintbynumber_progress";
 
-function saveProgress() {
-  localStorage.setItem("painted", JSON.stringify(painted));
-}
-
+// Carregar os dados JSON
 Promise.all([
   fetch("static/grid.json").then(res => res.json()),
   fetch("static/paleta.json").then(res => res.json())
@@ -28,20 +19,20 @@ Promise.all([
   grid = gridData;
   HEIGHT = grid.length;
   WIDTH = grid[0].length;
-  painted = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(0));
+  painted = loadProgress() || Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(0));
   palette = paletteData;
-
-  loadProgress();
 
   canvas.width = WIDTH * TILE;
   canvas.height = HEIGHT * TILE;
 
+  // Preencher a paleta visual
+  paletteDiv.innerHTML = "";
   palette.forEach((rgb, i) => {
     const btn = document.createElement("div");
     btn.classList.add("color-button");
     btn.style.backgroundColor = `rgb(${rgb.join(",")})`;
-    btn.textContent = i + 1;
     btn.dataset.color = i + 1;
+    btn.innerText = i + 1;
     if (i + 1 === selectedColor) btn.classList.add("selected");
     btn.addEventListener("click", () => {
       document.querySelectorAll(".color-button").forEach(el => el.classList.remove("selected"));
@@ -92,10 +83,19 @@ canvas.addEventListener("click", (e) => {
 });
 
 document.getElementById("resetButton").addEventListener("click", () => {
-  if (confirm("Deseja realmente recomeçar e apagar todo o progresso?")) {
+  if (confirm("Deseja recomeçar e apagar todo o progresso?")) {
     painted = Array.from({ length: HEIGHT }, () => Array(WIDTH).fill(0));
     saveProgress();
     draw();
   }
 });
+
+function saveProgress() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(painted));
+}
+
+function loadProgress() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : null;
+}
 
