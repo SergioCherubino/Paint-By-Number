@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enviar imagem</title>
+</head>
+<body>
+  <h2>Selecione uma imagem para criar o jogo</h2>
+  <form action="/processar" method="POST" enctype="multipart/form-data">
+    <input type="file" name="imagem" accept="image/*" required />
+    <button type="submit">Criar Jogo</button>
+  </form>
+</body>
+</html>
