@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Paint by Number - Início</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paint by Number</title>
+  <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
-  <h1>Bem-vindo ao Paint by Number</h1>
-  <a href="/upload"><button>Escolher imagem</button></a>
+  <div id="palette-container">
+    <div id="palette"></div>
+    <button id="resetButton">🔄 Recomeçar</button>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script src="static/script.js"></script>
 </body>
 </html>
