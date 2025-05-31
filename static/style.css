@@ -32,8 +32,8 @@ body {
 }
 canvas {
   display: block;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   border: 1px solid #ccc;
 }
 #palette-container {
