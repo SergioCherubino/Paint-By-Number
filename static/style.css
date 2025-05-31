@@ -33,6 +33,7 @@ body {
 canvas {
   display: block;
   margin: 20px auto;
+  border: 1px solid #ccc;
 }
 #palette-container {
   display: flex;
