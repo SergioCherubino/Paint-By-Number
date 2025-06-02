@@ -31,11 +31,9 @@ body {
 }
 canvas {
   display: block;
-  margin: 0;
-  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   border: 1px solid #ccc;
-  max-width: calc(100vw - 40px);
-  padding-bottom: 140px;
 }
 #palette-container {
   display: flex;
