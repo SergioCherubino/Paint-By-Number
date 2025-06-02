@@ -39,7 +39,7 @@ canvas {
   border: 1px solid #ccc;
 }
 #palette-container {
-  position: fixed;
+  position: flex;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
