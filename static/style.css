@@ -6,7 +6,13 @@ body {
 #palette {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  justify-content: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+  border-bottom: 1px solid #ccc;
 }
 .color-button {
   width: 30px;
