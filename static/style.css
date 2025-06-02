@@ -29,7 +29,6 @@ body {
 }
 .color-button.selected {
   border: 3px solid red;
-  border: 1px solid #ccc;
 }
 canvas {
   display: block;
