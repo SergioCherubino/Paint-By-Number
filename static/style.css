@@ -37,7 +37,7 @@ canvas {
   border: 1px solid #ccc;
 }
 #palette-container {
-  display: flex;
+  display: fixed;
   justify-content: center;
   align-items: center;
   gap: 10px;
