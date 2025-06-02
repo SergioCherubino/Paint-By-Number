@@ -32,12 +32,12 @@ body {
 }
 canvas {
   display: block;
-  top: 120px;
-  margin-left: 40px;
-  margin-right: 40px;
-  margin-bottom: 100px;
+  margin: 120px auto 140px auto; /* Top, Right/Left (auto), Bottom */
   border: 1px solid #ccc;
+  max-width: calc(100vw - 80px); /* Deixa margens laterais visuais */
+  height: auto;
 }
+
 #palette-container {
   position: fixed;
   bottom: 20px;
