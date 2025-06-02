@@ -43,7 +43,7 @@ canvas {
   gap: 10px;
   flex-wrap: wrap;
   background: #fff;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 10;
   padding: 10px;
