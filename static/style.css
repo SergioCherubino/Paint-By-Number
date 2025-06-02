@@ -34,25 +34,24 @@ canvas {
   display: block;
   margin: 40px auto 40px auto; /* Top, Right/Left (auto), Bottom */
   border: 1px solid #ccc;
-  max-width: calc(100vw - 80px); /* Deixa margens laterais visuais */
+  max-width: calc(100vw - 40px); /* Deixa margens laterais visuais */
   height: auto;
+  padding-bottom: 140px;
 }
 
 #palette-container {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: white;
-  padding: 10px 16px;
-  border-radius: 12px;
+  padding: 12px 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   z-index: 1000;
-  max-width: 95vw;
-  overflow-x: auto;
 }
 
 #resetButton {
