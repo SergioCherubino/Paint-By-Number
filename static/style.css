@@ -44,7 +44,8 @@ canvas {
   flex-wrap: wrap;
   background: #fff;
   position: fixed;
-  top: 0;
+  top: 20;
+  left: 50%;
   z-index: 10;
   padding: 10px;
   border-bottom: 1px solid #ccc;
