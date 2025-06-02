@@ -39,20 +39,13 @@ canvas {
   border: 1px solid #ccc;
 }
 #palette-container {
-  position: flex;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 10px 20px;
-
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  max-width: 95vw;
+  max-width: 100%;
   overflow-x: auto;
 }
 #resetButton {
