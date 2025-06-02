@@ -28,6 +28,7 @@ body {
 }
 .color-button.selected {
   border: 3px solid red;
+  border: 1px solid #ccc;
 }
 canvas {
   display: block;
@@ -58,6 +59,7 @@ canvas {
   border-radius: 4px;
   cursor: pointer;
 }
+
 #resetButton:hover {
   background-color: #cc0000;
 }
