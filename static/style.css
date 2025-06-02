@@ -27,7 +27,7 @@ body {
   color: white;
 }
 .color-button.selected {
-  border: 3px solid gold;
+  border: 3px solid red;
   border: 1px solid #ccc;
 }
 canvas {
@@ -43,7 +43,7 @@ canvas {
   gap: 10px;
   flex-wrap: wrap;
   background: #fff;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
   padding: 10px;
