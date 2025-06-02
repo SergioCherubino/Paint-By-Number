@@ -32,6 +32,7 @@ body {
 }
 canvas {
   display: block;
+  top: 120px;
   margin-left: 40px;
   margin-right: 40px;
   border: 1px solid #ccc;
