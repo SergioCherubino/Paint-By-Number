@@ -6,13 +6,7 @@ body {
 #palette {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 10;
-  border-bottom: 1px solid #ccc;
+  gap: 8px;
 }
 .color-button {
   width: 30px;
@@ -32,10 +26,10 @@ body {
 }
 canvas {
   display: block;
-  margin: 40px auto 40px auto; /* Top, Right/Left (auto), Bottom */
+  margin: 0;
+  margin-top: 20px;
   border: 1px solid #ccc;
-  max-width: calc(100vw - 40px); /* Deixa margens laterais visuais */
-  height: auto;
+  max-width: calc(100vw - 40px);
   padding-bottom: 140px;
 }
 
