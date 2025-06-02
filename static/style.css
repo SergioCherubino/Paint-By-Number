@@ -38,19 +38,18 @@ canvas {
   max-width: calc(100vw - 40px);
   padding-bottom: 140px;
 }
-
 #palette-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  padding: 12px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  z-index: 1000;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
 #resetButton {
