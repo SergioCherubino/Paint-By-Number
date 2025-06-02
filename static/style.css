@@ -32,7 +32,7 @@ body {
 }
 canvas {
   display: block;
-  margin: 120px auto 140px auto; /* Top, Right/Left (auto), Bottom */
+  margin: 40px auto 40px auto; /* Top, Right/Left (auto), Bottom */
   border: 1px solid #ccc;
   max-width: calc(100vw - 80px); /* Deixa margens laterais visuais */
   height: auto;
