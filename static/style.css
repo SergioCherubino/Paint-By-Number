@@ -37,17 +37,17 @@ canvas {
   border: 1px solid #ccc;
 }
 #palette-container {
-  position: fixed;               /* Fica fixo na janela */
-  top: 20px;                     /* Distância do topo */
-  left: 50%;                     /* Ponto central horizontal da janela */
-  transform: translateX(-50%);   /* Move metade da largura para a esquerda para centralizar */
-  z-index: 1000;                 /* Fica sobre os demais elementos */
-  
-  /* Estética opcional */
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 10;
   padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border-bottom: 1px solid #ccc;
 }
 
 #resetButton {
