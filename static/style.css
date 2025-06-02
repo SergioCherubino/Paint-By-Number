@@ -1,7 +1,6 @@
 body {
   margin: 10;
   font-family: sans-serif;
-  overflow-y: auto;
 }
 #palette {
   display: flex;
