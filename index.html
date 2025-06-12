@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página Inicial - Paint By Number</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #CD853F;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .image-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .image-button img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .image-button span {
+      display: block;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+    .progress-bar-container {
+      width: 200px;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 5px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #471f01;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .titulo-container {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      color: #471f01;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      background-color: #8B4513;
+    }
+    .titulo-container img {
+      width: 800px;
+      height: 200px;
+    }
+    .img-pixel {
+      display: block;
+      width: 300px;
+    }
+    .img-sombra {
+      position: absolute;
+      top: 10%;
+      left: 0; 
+      width: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo-container">
+     <img src="logo.gif" alt="Ícone" class="img-pixel">
+     <img src="sombra.png" alt="Ícone" class="img-sombra">
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const imagens = [
+      { nome: "Man", pasta: "img1" },
+      { nome: "Woman", pasta: "img2" },
+      { nome: "Nature", pasta: "img3" }
+    ];
+
+    const gallery = document.getElementById("gallery");
+
+    const reversed = [...imagens].reverse();
+
+    for (let i = 0; i < reversed.length; i += 2) {
+      const row = document.createElement("div");
+      row.style.display = "flex";
+      row.style.justifyContent = "center";
+      row.style.gap = "20px";
+      row.style.marginBottom = "20px";
+
+      for (let j = i; j < i + 2 && j < reversed.length; j++) {
+        const imagem = reversed[j];
+
+        const btn = document.createElement("button");
+        btn.className = "image-button";
+        btn.innerHTML = `
+          <img src="static/${imagem.pasta}/thumbnail.png" alt="${imagem.nome}">
+          <span>${imagem.nome}</span>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-${imagem.pasta}"></div>
+          </div>
+        `;
+
+        btn.onclick = () => {
+          localStorage.setItem("gridPath", `static/${imagem.pasta}/grid.json`);
+          localStorage.setItem("palettePath", `static/${imagem.pasta}/paleta.json`);
+          localStorage.setItem("progressKey", `progress_${imagem.pasta}`);
+          window.location.href = "game.html";
+        };
+
+        row.appendChild(btn);
+
+        const progressoStr = localStorage.getItem(`progress_${imagem.pasta}`);
+        if (progressoStr) {
+          const progresso = JSON.parse(progressoStr);
+          const total = progresso.flat().length;
+          const pintados = progresso.flat().filter(v => v !== 0).length;
+          const porcentagem = ((pintados / total) * 100).toFixed(2);
+
+          const progressBar = btn.querySelector(".progress-bar");
+          if (progressBar) progressBar.style.width = `${porcentagem}%`;
+          if (porcentagem === "100.00") {
+            const imgElement = btn.querySelector("img");
+            if (imgElement) {
+              imgElement.src = `static/${imagem.pasta}/image.png`;
+            }
+          }
+        }
+      }
+
+      gallery.appendChild(row);
+    }
+
+  </script>
+</body>
+</html>
+
