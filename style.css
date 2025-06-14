@@ -50,7 +50,6 @@ canvas {
   background-color: #8B4513;
 }
 
-#backButton,
 #resetButton {
   padding: 6px 12px;
   font-size: 14px;
@@ -59,14 +58,12 @@ canvas {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  flex-shrink: 0; /* impede que encolham demais */
-  white-space: nowrap;
 }
 
-#backButton:hover,
 #resetButton:hover {
   background-color: #cc0000;
 }
+
 
 #guessing-field {
   text-align: center;
