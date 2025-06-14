@@ -8,7 +8,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
-  position: sticky;
+  position: fixed;
   top: 0;
   background: #fff;
   z-index: 10;
