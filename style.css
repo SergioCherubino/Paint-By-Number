@@ -7,10 +7,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #ffffff;
-  gap: 5px;
-  flex: 1; /* ocupa espaço restante entre os botões */
-  padding: 0 10px;
+  padding: 10px;
+  position: sticky;
+  background: #fff;
+  z-index: 10;
+  border-bottom: 1px solid #ccc;
 }
 .color-button {
   width: 30px;
@@ -36,17 +37,17 @@ canvas {
 }
 #palette-container {
   display: flex;
-  justify-content: space-between; /* distribui os 3 elementos */
+  justify-content: center;
   align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
-  background-color: #8B4513;
-  position: fixed;
+  background: #fff;
+  position: sticky;
+  width: 100%;
   top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 9999;
+  z-index: 10;
   padding: 10px;
-  box-sizing: border-box;
+  background-color: #8B4513;
 }
 
 #backButton,
