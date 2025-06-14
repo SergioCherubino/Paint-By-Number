@@ -32,7 +32,7 @@ body {
 }
 canvas {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 100px;
   display: block;
   border: 1px solid #ccc;
 }
@@ -43,7 +43,9 @@ canvas {
   gap: 10px;
   flex-wrap: wrap;
   background: #fff;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
+  left: 0;
   top: 0;
   z-index: 10;
   padding: 10px;
