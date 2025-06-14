@@ -7,12 +7,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  background: #fff;
-  z-index: 10;
-  border-bottom: 1px solid #ccc;
+  background-color: #ffffff;
+  gap: 5px;
+  flex: 1; /* ocupa espaço restante entre os botões */
+  padding: 0 10px;
 }
 .color-button {
   width: 30px;
@@ -38,20 +36,20 @@ canvas {
 }
 #palette-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* distribui os 3 elementos */
   align-items: center;
-  gap: 10px;
   flex-wrap: wrap;
-  background: #fff;
-  position: fixed;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  padding: 10px;
   background-color: #8B4513;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 9999;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+#backButton,
 #resetButton {
   padding: 6px 12px;
   font-size: 14px;
@@ -60,8 +58,11 @@ canvas {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  flex-shrink: 0; /* impede que encolham demais */
+  white-space: nowrap;
 }
 
+#backButton:hover,
 #resetButton:hover {
   background-color: #cc0000;
 }
